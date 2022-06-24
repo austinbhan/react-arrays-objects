@@ -31,7 +31,13 @@ export const printUserInfo = ({ username, name: {first, last}, info: {favorites:
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = () => {}
+export const getSum = (...getSum) => {
+  let total = 0;
+  for (const sum of getSum) {
+    total += sum;
+  }
+  return total
+}
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
