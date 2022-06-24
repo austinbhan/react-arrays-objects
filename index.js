@@ -44,7 +44,13 @@ export const getSum = (...getSum) => {
 // REQS: use rest parameters
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
-export const getFirstTwoArgs = () => {}
+export const getFirstTwoArgs = (...rest) => {
+  let arrayOne = [...rest].slice(0, 2);
+  let arrayTwo = [...rest].slice(2); 
+
+  return [...arrayOne, arrayTwo];
+
+}
 
 // INPUT: an object with the following structure
 // {
